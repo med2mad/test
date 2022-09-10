@@ -1,0 +1,10 @@
+<%- include("partials/header") %>
+
+<% data.forEach(row=>{%>
+    <a class="data" href="/<%= row._id %>" >
+        <h3><%= row.column1 %></h3>
+        <p><%= row.column2 %></p>
+    </a>
+<% }) %>
+
+<%- include("partials/footer") %>

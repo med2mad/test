@@ -1,0 +1,9 @@
+<%- include("partials/header") %>
+
+    <p><%= data._id %></p>
+    <h3><%= data.column1 %></h3>
+    <p><%= data.column2 %></p>
+    <p><%= data.__v %></p>
+    <a href="/delete/<%= data._id %>">Delete Post</a>
+
+<%- include("partials/footer") %>
