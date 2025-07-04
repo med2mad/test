@@ -1,0 +1,26 @@
+name: .NET TestProject1 CI
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '9.0.0'
+
+    - name: Restore
+      run: dotnet restore TestProject1/TestProject1.csproj
+
+    - name: Build
+      run: dotnet build TestProject1/TestProject1.csproj --no-restore
+
+    - name: Test
+      run: dotnet test TestProject1/TestProject1.csproj --no-build --verbosity normal
